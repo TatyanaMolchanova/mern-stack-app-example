@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/root'));
+app.use('/users', require('./routes/userRoutes'));
 
 app.all('*', (req, res) => {
     res.status(404);
@@ -52,4 +53,4 @@ mongoose.connection.on('error', err => {
         'mongoErrLog.log');
 })
 
-//1-25 https://www.youtube.com/watch?v=CvCiNeLnZ00
+//2-08 https://www.youtube.com/watch?v=CvCiNeLnZ00
